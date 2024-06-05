@@ -12,5 +12,49 @@ namespace SistemaDeComandas.BancoDeDados
         public DbSet<ComandaItem> ComandaItems { get; set; }
         public DbSet<PedidoCozinha> PedidoCozinhas { get; set; }
         public DbSet<PedidoCozinhaItem> PedidoCozinhaItems { get; set; }
+
+        // para configurar a conexão do banco de dados
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlite("DataSource=comandas.db");
+            base.OnConfiguring(optionsBuilder);
+        }
+
+        // para configurar os relacionamentos das tabelas
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            // acesse a entidate CardapioItem para determinar a nomenclatura
+            modelBuilder.Entity<CardapioItem>()
+                .HasComment("Cadastro de itens do cardapio");
+
+            // Uma Comanda possui muitos ComandaItems
+            // E sua chave extrangeira é ComandaId
+            modelBuilder.Entity<Comanda>()
+                .HasMany<ComandaItem>()
+                .WithOne(ci => ci.Comanda)
+                .HasForeignKey(f => f.ComandaId);
+
+            // O Item da comanda possui um Item de Cardápio
+            // E sua chave extrangeira é CardapioItemId
+            modelBuilder.Entity<ComandaItem>()
+                .HasOne(ci => ci.CardapioItem)
+                .WithMany()
+                .HasForeignKey(ci => ci.CardapioItemId);
+
+            // Pedido Cozinha com Pedido Cozinha Item
+            modelBuilder.Entity<PedidoCozinha>()
+                .HasMany<PedidoCozinhaItem>()
+                .WithOne(pci => pci.PedidoCozinha)
+                .HasForeignKey(pci => pci.PedidoCozinhaId);
+
+            // pedido cozinha item possui um comanda item
+            // E sua chave extrangeira é ComandaItemId
+            modelBuilder.Entity<PedidoCozinhaItem>()
+                .HasOne(pci => pci.ComandaItem)
+                .WithMany()
+                .HasForeignKey(pci => pci.ComandaItemId);
+
+            base.OnModelCreating(modelBuilder);
+        }
     }
 }
