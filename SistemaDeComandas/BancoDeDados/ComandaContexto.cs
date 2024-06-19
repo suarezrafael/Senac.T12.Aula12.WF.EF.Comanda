@@ -23,15 +23,17 @@ namespace SistemaDeComandas.BancoDeDados
         // para configurar os relacionamentos das tabelas
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            // acesse a entidate CardapioItem para determinar a nomenclatura
-            modelBuilder.Entity<CardapioItem>()
-                .HasComment("Cadastro de itens do cardapio");
 
             // Uma Comanda possui muitos ComandaItems
             // E sua chave extrangeira é ComandaId
             modelBuilder.Entity<Comanda>()
                 .HasMany<ComandaItem>()
                 .WithOne(ci => ci.Comanda)
+                .HasForeignKey(f => f.ComandaId);
+
+            modelBuilder.Entity<ComandaItem>()
+                .HasOne(ci => ci.Comanda)
+                .WithMany(ci => ci.ComandaItems)
                 .HasForeignKey(f => f.ComandaId);
 
             // O Item da comanda possui um Item de Cardápio
@@ -46,6 +48,11 @@ namespace SistemaDeComandas.BancoDeDados
                 .HasMany<PedidoCozinhaItem>()
                 .WithOne(pci => pci.PedidoCozinha)
                 .HasForeignKey(pci => pci.PedidoCozinhaId);
+
+            modelBuilder.Entity<PedidoCozinhaItem>()
+                .HasOne(tico => tico.PedidoCozinha)
+                .WithMany(tico => tico.PedidoCozinhaItems)
+                .HasForeignKey(teco => teco.PedidoCozinhaId);
 
             // pedido cozinha item possui um comanda item
             // E sua chave extrangeira é ComandaItemId
