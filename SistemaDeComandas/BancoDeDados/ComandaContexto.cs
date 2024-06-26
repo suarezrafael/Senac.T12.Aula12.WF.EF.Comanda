@@ -12,6 +12,7 @@ namespace SistemaDeComandas.BancoDeDados
         public DbSet<ComandaItem> ComandaItems { get; set; }
         public DbSet<PedidoCozinha> PedidoCozinhas { get; set; }
         public DbSet<PedidoCozinhaItem> PedidoCozinhaItems { get; set; }
+        public DbSet<Usuario> Usuarios { get; set; }
 
         // para configurar a conexão do banco de dados
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
