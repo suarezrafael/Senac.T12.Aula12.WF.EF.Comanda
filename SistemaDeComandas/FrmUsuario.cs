@@ -5,6 +5,8 @@ namespace SistemaDeComandas
 {
     public partial class FrmUsuario : Form
     {
+        private bool ehNovoUsuario;
+
         public FrmUsuario()
         {
             InitializeComponent();
@@ -14,13 +16,30 @@ namespace SistemaDeComandas
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            CriarUsuario();
-            //AtualizarUsuario();
+            if (ehNovoUsuario)
+                CriarUsuario();
+            else
+                AtualizarUsuario();
         }
 
         private void AtualizarUsuario()
         {
-            throw new NotImplementedException();
+            using (var banco = new ComandaContexto())
+            {
+                // buscar o usuario pelo ID
+                var usuario = banco
+                    .Usuarios
+                        .First(usuario =>
+                                usuario.Id == 1);
+
+                // atualizar as propriedades
+                usuario.Nome = txtNome.TextButton;
+                usuario.Email = txtEmail.TextButton;
+                usuario.Senha = txtSenha.TextButton;
+
+                // salvar as alterações
+                banco.SaveChanges();
+            }
         }
 
         private void CriarUsuario()
@@ -67,6 +86,21 @@ namespace SistemaDeComandas
                 // dados da tabela usuarios serão exibidos no GRID
                 dgvUsuarios.DataSource = usuarios;
             }
+        }
+
+        private void btnNovo_Click(object sender, EventArgs e)
+        {
+            ehNovoUsuario = true;
+
+            txtNome.TextButton = string.Empty;
+            txtNome.Text = string.Empty;
+            txtEmail.TextButton = string.Empty;
+            txtSenha.TextButton = string.Empty;
+        }
+
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            ehNovoUsuario = false;
         }
     }
 }

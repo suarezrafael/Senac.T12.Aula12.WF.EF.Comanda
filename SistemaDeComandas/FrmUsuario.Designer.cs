@@ -369,6 +369,7 @@
             btnEditar.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnEditar.Timer_Effect_1 = 5;
             btnEditar.Timer_RGB = 300;
+            btnEditar.Click += btnEditar_Click;
             // 
             // btnNovo
             // 
@@ -409,6 +410,7 @@
             btnNovo.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             btnNovo.Timer_Effect_1 = 5;
             btnNovo.Timer_RGB = 300;
+            btnNovo.Click += btnNovo_Click;
             // 
             // dgvUsuarios
             // 

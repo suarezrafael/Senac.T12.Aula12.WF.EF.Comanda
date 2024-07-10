@@ -19,6 +19,15 @@ namespace SistemaDeComandas
             using (var banco = new ComandaContexto())
             {
                 // verificar se ja existe um admin
+                var usuarioExiste = banco
+                    .Usuarios
+                    .FirstOrDefault(usuario =>
+                        usuario
+                            .Nome
+                                .Equals("Admin"));
+
+                if (usuarioExiste != null)
+                    return;
 
                 // cria um novo usuario
                 var novoUsuario = new Usuario();
