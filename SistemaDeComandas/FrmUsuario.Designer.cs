@@ -29,6 +29,8 @@
         private void InitializeComponent()
         {
             cyberGroupBox1 = new ReaLTaiizor.Controls.CyberGroupBox();
+            thunderLabel4 = new ReaLTaiizor.Controls.ThunderLabel();
+            txtId = new ReaLTaiizor.Controls.CyberTextBox();
             btnCancelar = new ReaLTaiizor.Controls.CyberButton();
             thunderLabel3 = new ReaLTaiizor.Controls.ThunderLabel();
             thunderLabel2 = new ReaLTaiizor.Controls.ThunderLabel();
@@ -59,6 +61,8 @@
             cyberGroupBox1.ColorLighting = Color.FromArgb(29, 200, 238);
             cyberGroupBox1.ColorPen_1 = Color.FromArgb(37, 52, 68);
             cyberGroupBox1.ColorPen_2 = Color.FromArgb(41, 63, 86);
+            cyberGroupBox1.Controls.Add(thunderLabel4);
+            cyberGroupBox1.Controls.Add(txtId);
             cyberGroupBox1.Controls.Add(btnCancelar);
             cyberGroupBox1.Controls.Add(thunderLabel3);
             cyberGroupBox1.Controls.Add(thunderLabel2);
@@ -81,12 +85,53 @@
             cyberGroupBox1.RGB = false;
             cyberGroupBox1.Rounding = true;
             cyberGroupBox1.RoundingInt = 60;
-            cyberGroupBox1.Size = new Size(913, 314);
+            cyberGroupBox1.Size = new Size(913, 374);
             cyberGroupBox1.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
             cyberGroupBox1.TabIndex = 0;
             cyberGroupBox1.Tag = "Cyber";
             cyberGroupBox1.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
             cyberGroupBox1.Timer_RGB = 300;
+            // 
+            // thunderLabel4
+            // 
+            thunderLabel4.BackColor = Color.Transparent;
+            thunderLabel4.ForeColor = Color.WhiteSmoke;
+            thunderLabel4.Location = new Point(81, 51);
+            thunderLabel4.Name = "thunderLabel4";
+            thunderLabel4.Size = new Size(120, 20);
+            thunderLabel4.TabIndex = 12;
+            thunderLabel4.Text = "Id:";
+            // 
+            // txtId
+            // 
+            txtId.Alpha = 20;
+            txtId.BackColor = Color.Transparent;
+            txtId.Background_WidthPen = 3F;
+            txtId.BackgroundPen = true;
+            txtId.ColorBackground = Color.FromArgb(37, 52, 68);
+            txtId.ColorBackground_Pen = Color.FromArgb(29, 200, 238);
+            txtId.ColorLighting = Color.FromArgb(29, 200, 238);
+            txtId.ColorPen_1 = Color.FromArgb(29, 200, 238);
+            txtId.ColorPen_2 = Color.FromArgb(37, 52, 68);
+            txtId.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtId.Enabled = false;
+            txtId.Font = new Font("Arial", 12F);
+            txtId.ForeColor = Color.FromArgb(245, 245, 245);
+            txtId.Lighting = false;
+            txtId.LinearGradientPen = false;
+            txtId.Location = new Point(209, 21);
+            txtId.Name = "txtId";
+            txtId.PenWidth = 15;
+            txtId.RGB = false;
+            txtId.Rounding = true;
+            txtId.RoundingInt = 60;
+            txtId.Size = new Size(250, 50);
+            txtId.SmoothingMode = System.Drawing.Drawing2D.SmoothingMode.HighQuality;
+            txtId.TabIndex = 11;
+            txtId.Tag = "Cyber";
+            txtId.TextButton = "";
+            txtId.TextRenderingHint = System.Drawing.Text.TextRenderingHint.ClearTypeGridFit;
+            txtId.Timer_RGB = 300;
             // 
             // btnCancelar
             // 
@@ -114,7 +159,7 @@
             btnCancelar.Lighting = false;
             btnCancelar.LinearGradient_Background = false;
             btnCancelar.LinearGradientPen = false;
-            btnCancelar.Location = new Point(691, 237);
+            btnCancelar.Location = new Point(691, 284);
             btnCancelar.Name = "btnCancelar";
             btnCancelar.PenWidth = 15;
             btnCancelar.Rounding = true;
@@ -132,7 +177,7 @@
             // 
             thunderLabel3.BackColor = Color.Transparent;
             thunderLabel3.ForeColor = Color.WhiteSmoke;
-            thunderLabel3.Location = new Point(83, 199);
+            thunderLabel3.Location = new Point(83, 249);
             thunderLabel3.Name = "thunderLabel3";
             thunderLabel3.Size = new Size(120, 20);
             thunderLabel3.TabIndex = 9;
@@ -142,7 +187,7 @@
             // 
             thunderLabel2.BackColor = Color.Transparent;
             thunderLabel2.ForeColor = Color.WhiteSmoke;
-            thunderLabel2.Location = new Point(83, 132);
+            thunderLabel2.Location = new Point(83, 182);
             thunderLabel2.Name = "thunderLabel2";
             thunderLabel2.Size = new Size(120, 20);
             thunderLabel2.TabIndex = 8;
@@ -152,7 +197,7 @@
             // 
             thunderLabel1.BackColor = Color.Transparent;
             thunderLabel1.ForeColor = Color.WhiteSmoke;
-            thunderLabel1.Location = new Point(83, 55);
+            thunderLabel1.Location = new Point(83, 105);
             thunderLabel1.Name = "thunderLabel1";
             thunderLabel1.Size = new Size(120, 20);
             thunderLabel1.TabIndex = 7;
@@ -170,11 +215,12 @@
             txtSenha.ColorPen_1 = Color.FromArgb(29, 200, 238);
             txtSenha.ColorPen_2 = Color.FromArgb(37, 52, 68);
             txtSenha.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtSenha.Enabled = false;
             txtSenha.Font = new Font("Arial", 12F);
             txtSenha.ForeColor = Color.FromArgb(245, 245, 245);
             txtSenha.Lighting = false;
             txtSenha.LinearGradientPen = false;
-            txtSenha.Location = new Point(209, 169);
+            txtSenha.Location = new Point(209, 219);
             txtSenha.Name = "txtSenha";
             txtSenha.Password = true;
             txtSenha.PenWidth = 15;
@@ -201,11 +247,12 @@
             txtEmail.ColorPen_1 = Color.FromArgb(29, 200, 238);
             txtEmail.ColorPen_2 = Color.FromArgb(37, 52, 68);
             txtEmail.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtEmail.Enabled = false;
             txtEmail.Font = new Font("Arial", 12F);
             txtEmail.ForeColor = Color.FromArgb(245, 245, 245);
             txtEmail.Lighting = false;
             txtEmail.LinearGradientPen = false;
-            txtEmail.Location = new Point(209, 107);
+            txtEmail.Location = new Point(209, 157);
             txtEmail.Name = "txtEmail";
             txtEmail.PenWidth = 15;
             txtEmail.RGB = false;
@@ -231,11 +278,12 @@
             txtNome.ColorPen_1 = Color.FromArgb(29, 200, 238);
             txtNome.ColorPen_2 = Color.FromArgb(37, 52, 68);
             txtNome.CyberTextBoxStyle = ReaLTaiizor.Enum.Cyber.StateStyle.Custom;
+            txtNome.Enabled = false;
             txtNome.Font = new Font("Arial", 12F);
             txtNome.ForeColor = Color.FromArgb(245, 245, 245);
             txtNome.Lighting = false;
             txtNome.LinearGradientPen = false;
-            txtNome.Location = new Point(209, 39);
+            txtNome.Location = new Point(209, 89);
             txtNome.Name = "txtNome";
             txtNome.PenWidth = 15;
             txtNome.RGB = false;
@@ -275,7 +323,7 @@
             btnExcluir.Lighting = false;
             btnExcluir.LinearGradient_Background = false;
             btnExcluir.LinearGradientPen = false;
-            btnExcluir.Location = new Point(538, 237);
+            btnExcluir.Location = new Point(538, 284);
             btnExcluir.Name = "btnExcluir";
             btnExcluir.PenWidth = 15;
             btnExcluir.Rounding = true;
@@ -315,7 +363,7 @@
             btnSalvar.Lighting = false;
             btnSalvar.LinearGradient_Background = false;
             btnSalvar.LinearGradientPen = false;
-            btnSalvar.Location = new Point(380, 237);
+            btnSalvar.Location = new Point(380, 284);
             btnSalvar.Name = "btnSalvar";
             btnSalvar.PenWidth = 15;
             btnSalvar.Rounding = true;
@@ -356,7 +404,7 @@
             btnEditar.Lighting = false;
             btnEditar.LinearGradient_Background = false;
             btnEditar.LinearGradientPen = false;
-            btnEditar.Location = new Point(234, 237);
+            btnEditar.Location = new Point(234, 284);
             btnEditar.Name = "btnEditar";
             btnEditar.PenWidth = 15;
             btnEditar.Rounding = true;
@@ -397,7 +445,7 @@
             btnNovo.Lighting = false;
             btnNovo.LinearGradient_Background = false;
             btnNovo.LinearGradientPen = false;
-            btnNovo.Location = new Point(83, 237);
+            btnNovo.Location = new Point(83, 284);
             btnNovo.Name = "btnNovo";
             btnNovo.PenWidth = 15;
             btnNovo.Rounding = true;
@@ -415,11 +463,12 @@
             // dgvUsuarios
             // 
             dgvUsuarios.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvUsuarios.Location = new Point(46, 351);
+            dgvUsuarios.Location = new Point(46, 411);
             dgvUsuarios.Name = "dgvUsuarios";
             dgvUsuarios.RowHeadersWidth = 51;
-            dgvUsuarios.Size = new Size(844, 294);
+            dgvUsuarios.Size = new Size(844, 234);
             dgvUsuarios.TabIndex = 0;
+            dgvUsuarios.CellClick += dgvUsuarios_CellClick;
             // 
             // FrmUsuario
             // 
@@ -450,5 +499,7 @@
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel2;
         private ReaLTaiizor.Controls.ThunderLabel thunderLabel1;
         private DataGridView dgvUsuarios;
+        private ReaLTaiizor.Controls.ThunderLabel thunderLabel4;
+        private ReaLTaiizor.Controls.CyberTextBox txtId;
     }
 }
