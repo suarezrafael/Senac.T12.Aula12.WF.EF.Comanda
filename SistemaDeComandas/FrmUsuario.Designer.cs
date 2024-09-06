@@ -478,6 +478,7 @@
             Controls.Add(dgvUsuarios);
             Controls.Add(cyberGroupBox1);
             Name = "FrmUsuario";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "FrmUsuario";
             cyberGroupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgvUsuarios).EndInit();
